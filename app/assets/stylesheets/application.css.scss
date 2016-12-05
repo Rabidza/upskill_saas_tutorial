@@ -51,6 +51,17 @@ h1, h2, h3 {
   }
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background: whitesmoke;
+}
+
+.navbar-default .navbar-toggle {
+  border: 2px solid whitesmoke;
+  &:hover, &:focus{
+    background-color: #43cea2;
+  }
+}
+
 // Home Page styles
 .home-callout {
   color: whitesmoke;
