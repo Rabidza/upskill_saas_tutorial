@@ -6,10 +6,11 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params) #{name: 'asdf', email: 'asdf', comments: 'asdf'}
     if @contact.save
+      # Added the following to be able to send the email directly after the new contact form is saved
       name = params[:contact][:name]
       email = params[:contact][:email]
       body = params[:contact][:comments]
-      ContactMailer.contact_email(name, email, body).deliver
+      ContactMailer.contact_email(name, email, body).deliver 
       flash[:success] = "Message sent."
       redirect_to new_contact_path
     else
